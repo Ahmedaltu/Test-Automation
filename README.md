@@ -8,5 +8,7 @@ This project covers:
 5- Jenkins Integration  
 6- Selenium Automation  
 7- Ceedling and Jenkins  
-6- SSH Library  
+6- SSH Library       
  
+Hardware:   
+1- LPCXpresso board     
