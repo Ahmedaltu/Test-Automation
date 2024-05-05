@@ -1,6 +1,6 @@
 # Test-Automation
 
-This project covers:
+This project covers:  
 1- Libraries and Keywords  
 2- Data-Driven Style  
 3- Setup and Teardown with Resources  
