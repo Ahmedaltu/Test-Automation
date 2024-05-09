@@ -8,14 +8,14 @@ This project covers:
 5- Jenkins Integration  
 6- Selenium Automation  
 7- Ceedling and Jenkins  
-6- SSH Library       
+6- SSH Library         
  
 Hardware:   
-1- LPCXpresso board     
+1- LPCXpresso board       
 
 
 
-Links:   
+Links:      
 1- How to Use Ceedling for
 Embedded Test-Driven
 Development   http://electronvector.com/
