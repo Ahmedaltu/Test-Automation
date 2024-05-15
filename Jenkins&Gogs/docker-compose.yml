@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  gogs:
+    image: gogs/gogs:latest
+    container_name: gogs
+    ports:
+      - "10022:22"
+      - "3000:3000"
+    volumes:
+      - gogs-data:/data
+    environment:
+      - GOGS_CUSTOM=/data/gogs
+    restart: unless-stopped
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins-data:/var/jenkins_home
+    restart: unless-stopped
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+    depends_on:
+      - gogs
+
+volumes:
+    jenkins_home:
+        name: jenkins_home
+
+    gogs_data:
+        name: gogs_data
+
+    gogs_backup:
+        name: gogs_backup
