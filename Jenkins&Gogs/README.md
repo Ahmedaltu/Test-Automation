@@ -13,8 +13,8 @@ Copy Dockerfile and docker-compose.yml to the same directory. Open command promp
 the directory and execute:
 docker-compose up
 Now your containers are up and running and you can perform the initial configuration of Jenkins and Gogs.
-Following chapters explain how to setup the services.
-When you want to stop your containers just execute:
-docker-compose down
-You can start the contained in detached mode by executing:
-docker-compose up --detached
+
+To stop your containers just execute:  
+docker-compose down   
+You can start the contained in detached mode by executing:  
+docker-compose up --detached   
