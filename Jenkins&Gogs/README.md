@@ -6,8 +6,15 @@ Step 2: Create a Docker Compose File
 Create a directory for the project.
 Inside this directory, create a file named docker-compose.yml.
 Step 3: Configure Docker Compose File
-as it is listed above docker-compose.yml
+as it is listed above docker-compose.yml    
 
+To keep the URLs consistent both in containers and on the host computer you need to edit /etc/hosts. On   
+linux the file path is /etc/hosts. On windows the file path is:  
+C:\Windows\System32\drivers\etc\hosts. Note that you need administrator privileges to edit the  
+file. Add the following lines to /etc/hosts:  
+# Reroute jenkins and gogs to localhost   
+127.0.0.1 jenkins   
+127.0.0.1 gogs       
 
 Copy Dockerfile and docker-compose.yml to the same directory. Open command prompt/terminal, go to
 the directory and execute:
