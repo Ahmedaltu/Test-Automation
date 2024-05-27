@@ -12,7 +12,7 @@ To keep the URLs consistent both in containers and on the host computer you need
 linux the file path is /etc/hosts. On windows the file path is:  
 C:\Windows\System32\drivers\etc\hosts. Note that you need administrator privileges to edit the  
 file. Add the following lines to /etc/hosts:  
-# Reroute jenkins and gogs to localhost   
+//# Reroute jenkins and gogs to localhost   
 127.0.0.1 jenkins   
 127.0.0.1 gogs       
 
