@@ -1,0 +1,51 @@
+pipeline {
+  agent {
+    node {
+      label 'windows'
+    }
+
+  }
+  stages {
+    stage('Build') {
+      parallel {
+        stage('Build') {
+          steps {
+            bat 'build.bat'
+          }
+        }
+
+        stage('Ceedling') {
+          post {
+            always {
+              xunit(tools: [Custom(customXSL: 'unity.xsl', pattern: 'MorseSender/build/artifacts/test/report.xml', skipNoTestFiles: false, stopProcessingIfError: true)])
+            }
+
+          }
+          steps {
+            bat 'ceedling.bat'
+          }
+        }
+
+      }
+    }
+
+    stage('Flash') {
+      steps {
+        bat 'flash.bat'
+      }
+    }
+
+    stage('Run Robot') {
+      steps {
+        bat 'py -m robot --nostatusrc -v port1:%port1% -v port2:%port2% morse.robot'
+      }
+    }
+
+    stage('Robot Output') {
+      steps {
+        robot '.'
+      }
+    }
+
+  }
+}
